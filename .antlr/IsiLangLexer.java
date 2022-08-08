@@ -1,4 +1,4 @@
-// Generated from /Users/robertchinem/github/isilanguage-compiler/isiLang.g4 by ANTLR 4.9.2
+// Generated from /Users/robertchinem/github/isi-language/transpiler/isilanguage-compiler/IsiLang.g4 by ANTLR 4.9.2
 
     import java.util.HashSet;
     import java.util.ArrayList;
@@ -134,8 +134,8 @@ public class IsiLangLexer extends Lexer {
 	        }
 	    }
 
-	    public void generateCode(){
-	        program.generateTarget();
+	    public void generateCode(String pathOutput){
+	        program.generateTarget(pathOutput);
 	    }
 
 	    public boolean checkTypes(String targetID, String ID){
@@ -188,7 +188,7 @@ public class IsiLangLexer extends Lexer {
 	}
 
 	@Override
-	public String getGrammarFileName() { return "isiLang.g4"; }
+	public String getGrammarFileName() { return "IsiLang.g4"; }
 
 	@Override
 	public String[] getRuleNames() { return ruleNames; }

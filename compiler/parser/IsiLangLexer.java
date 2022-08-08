@@ -1,4 +1,4 @@
-// Generated from IsiLang.g4 by ANTLR 4.7.1
+// Generated from transpiler/isilanguage-compiler/IsiLang.g4 by ANTLR 4.7.1
 package compiler.parser;
 
     import java.util.HashSet;
@@ -126,8 +126,8 @@ public class IsiLangLexer extends Lexer {
 	        }
 	    }
 
-	    public void generateCode(){
-	        program.generateTarget();
+	    public void generateCode(String pathOutput){
+	        program.generateTarget(pathOutput);
 	    }
 
 	    public boolean checkTypes(String targetID, String ID){

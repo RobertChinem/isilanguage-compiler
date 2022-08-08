@@ -43,8 +43,8 @@ grammar IsiLang;
         }
     }
 
-    public void generateCode(){
-        program.generateTarget();
+    public void generateCode(String pathOutput){
+        program.generateTarget(pathOutput);
     }
 
     public boolean checkTypes(String targetID, String ID){

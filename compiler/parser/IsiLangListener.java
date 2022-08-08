@@ -1,4 +1,4 @@
-// Generated from IsiLang.g4 by ANTLR 4.7.1
+// Generated from transpiler/isilanguage-compiler/IsiLang.g4 by ANTLR 4.7.1
 package compiler.parser;
 
     import java.util.HashSet;

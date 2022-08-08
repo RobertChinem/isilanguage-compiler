@@ -14,7 +14,7 @@ public class Program {
     private ArrayList<AbstractCommand> commands;
     private String programName;
 
-    public void generateTarget() {
+    public void generateTarget(String pathOutput) {
         StringBuilder str = new StringBuilder();
         str.append("import java.util.Scanner;\n");
         str.append("import java.lang.Math;\n");
@@ -42,7 +42,7 @@ public class Program {
         System.out.println("Build completed");
 
         try {
-            FileWriter fr = new FileWriter(new File("MainClass.java"));
+            FileWriter fr = new FileWriter(new File(pathOutput));
             fr.write(str.toString());
             fr.close();
         } catch(Exception e) {
