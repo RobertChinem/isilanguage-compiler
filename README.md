@@ -23,7 +23,7 @@ java -cp .:antlr-4.7.1-complete.jar compiler/main/MainClass
 
 ✅ Inclusão de novos operadores (exponenciação, raiz quadrada, logaritmos) |
  (Implementado: exponenciação)
- 
+
 ❌ Geração de código para mais de uma linguagem diferente
 
 
@@ -50,7 +50,7 @@ Criar um editor com Highlights de palavras reservadas (editor Desktop)
 
 ✅ Possuir operações de Entrada e Saída	
 
-Aceitar números decimais 	
+❌ Aceitar números decimais 	
 
 ✅ Verificar declaração de variávies (não usar variáveis que não foram declaradas)	
 
