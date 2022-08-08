@@ -1,0 +1,41 @@
+programa
+
+   declare Texto aluno, Texto prof, Num idade.
+
+   leia(aluno).
+   leia(prof).
+   leia(idade).
+
+   escolha (aluno) {
+      caso ("a"){
+         escolha (prof){
+            caso("p"){
+               escreva("ap").
+            }
+            caso("pp"){
+               escreva("app").
+            }
+         }
+         
+         se(idade ** 2 <= 18) entao {
+            escreva(idade).
+         }
+      }
+
+      caso ("b"){
+         escolha (prof){
+            caso("p"){
+               escreva("bp").
+            }
+            caso("pp"){
+               escreva("bpp").
+            }
+         }
+         
+         se(idade <= 20) entao {
+            escreva(idade).
+         }
+      }
+   }
+
+fimprog. 
