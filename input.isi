@@ -2,5 +2,10 @@ programa
 
    declare Inteiro area, Decimal raio, Decimal pi, Texto t.
 
+   escolha(t){
+      caso("20"){
+         escreva("erro").
+      }
+   }
 
 fimprog. 

@@ -797,6 +797,10 @@ public class IsiLangParser extends Parser {
 
 			                    _exprID = _input.LT(-1).getText();
 			                    checkID(_exprID);
+
+			                    if(!hasType(_exprID, Variable.INT) && !hasType(_exprID, Variable.TEXT)){
+			                        throw new SemanticException("Variable " + _exprID + " must be of type int or text");
+			                    }
 			                
 			setState(127);
 			match(T__7);

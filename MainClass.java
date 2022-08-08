@@ -7,4 +7,11 @@ int area = 0;
 double raio = 0.0;
 String t = "";
 double pi = 0.0;
+switch(t) {
+case "20":
+System.out.println("erro");
+break;
+
+}
+
   }}
