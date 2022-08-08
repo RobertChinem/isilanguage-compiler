@@ -10,3 +10,40 @@ java -cp .:antlr-4.7.1-complete.jar org.antlr.v4.Tool IsiLang.g4 -package compil
 javac -cp .:antlr-4.7.1-complete.jar compiler/**/*.java
 
 java -cp .:antlr-4.7.1-complete.jar compiler/main/MainClass
+
+# Progresso
+
+## Critérios de Avaliação
+
+### Anexo 1 - Elementos adicionais (pelo menos 2 dos itens abaixo)✅
+
+✅ Nova instrução para Switch/Case (escolha/caso)
+❌ Mais tipos de dados
+✅ Inclusão de novos operadores (exponenciação, raiz quadrada, logaritmos) | (Implementado: exponenciação)
+❌ Geração de código para mais de uma linguagem diferente
+
+
+### Anexo 2 - Elementos Extraordinarios (pelo menos 2 itens abaixo) 
+
+Criar um interpretador a partir da AST
+Criar um editor com Highlights de palavras reservadas (editor Desktop)
+👨‍💻 Criar um editor Web para o código
+👨‍💻 Tornar o compilador um Webservice para receber programas e enviar respostas de possíveis erros
+
+### Instruções para Entrega do Projeto
+
+✅ Possuir 2 tipos de dados (pelo menos 1 String) 	
+✅ Possuir a instrução de decisão (if/else)	
+✅ Pelo menos 1 estrutura de repetição	
+✅ Verificar Atribuições com compatibilidade de tipos (semântica) 	
+✅ Possuir operações de Entrada e Saída	
+Aceitar números decimais 	
+✅ Verificar declaração de variávies (não usar variáveis que não foram declaradas)	
+✅ Verificar se há variáveis declaradas e não-utilizadas (warning)	
+✅ Geração de pelo menos 1 linguagem destino (C/Java/Python)
+
+
+
+
+
+
