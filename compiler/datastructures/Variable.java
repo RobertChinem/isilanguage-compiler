@@ -1,8 +1,10 @@
 package compiler.datastructures;
 
 public class Variable extends Symbol {
-    public static final int NUMBER  = 0;
-	public static final int TEXT    = 1;
+    public static final int INT     =   0;
+    public static final int DOUBLE  =   1;
+	public static final int TEXT    =   2;
+    
 
     private int type;
     private String value;
@@ -16,8 +18,10 @@ public class Variable extends Symbol {
     @Override
     public String generateJavaCode() {
         switch(type){
-            case NUMBER:
+            case INT:
                 return String.format("int %s = 0;", name);
+            case DOUBLE:
+                return String.format("double %s = 0.0;", name);
             case TEXT:
                 return String.format("String %s = \"\";", name);
             default:

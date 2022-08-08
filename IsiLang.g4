@@ -48,7 +48,18 @@ grammar IsiLang;
     }
 
     public boolean checkTypes(String targetID, String ID){
-        return ((Variable)_symbolTable.get(targetID)).getType() == ((Variable)_symbolTable.get(ID)).getType();
+        boolean targetIsNum = hasType(targetID, Variable.INT) || hasType(targetID, Variable.DOUBLE);
+        boolean id = hasType(ID, Variable.INT) || hasType(ID, Variable.DOUBLE);
+
+        if(targetIsNum && id){
+            return true;
+        }
+
+        if(hasType(targetID, Variable.TEXT) && hasType(ID, Variable.TEXT)){
+            return true;
+        }
+
+        return false;
     }
 
     public boolean isOperator(char ch){
@@ -72,7 +83,7 @@ grammar IsiLang;
             aux = exprContent.charAt(i) + aux;
             i--;
         }
-        return exprContent.replace(aux+"**", "") + String.format("Math.pow(%s, %s)", aux, currentId);
+        return exprContent.replace(aux+"**", "") + String.format("Math.pow((double)%s, (double)%s)", aux, currentId);
     }
 
     public boolean hasType(String ID, int type){
@@ -212,7 +223,7 @@ caso    :   'caso'
                     String switchVariable = _exprDecisionStack.peek();
                     _exprContent = _input.LT(-1).getText();
 
-                    if(hasType(switchVariable, Variable.NUMBER)){
+                    if(hasType(switchVariable, Variable.INT)){
                         throw new SemanticException("Expected a number, found a text: " + _exprContent);
                     }
                 }
@@ -273,6 +284,14 @@ cmdExpr :   Id  {
             ':=' {  _exprContent = "";  }
             (
                     expr    {
+                        if(hasType(_exprID, Variable.INT)){
+                            _exprContent = String.format("(int)(%s)", _exprContent);
+                        }
+                        
+                        if(hasType(_exprID, Variable.DOUBLE)){
+                            _exprContent = String.format("(double)(%s)", _exprContent);
+                        }
+
                         CommandAssignment cmd = new CommandAssignment(_exprID, _exprContent);
                         scopeStack.peek().add(cmd);
                     }
@@ -312,7 +331,7 @@ termo   :   Id {
                 }
             }
         |   Num {
-                if(_exprID == null || ((Variable)_symbolTable.get(_exprID)).getType() == Variable.NUMBER){
+                if(_exprID == null || hasType(_exprID, Variable.INT) || hasType(_exprID, Variable.DOUBLE)){
                     if(getLastOperator(_exprContent).equals("**")){
                         _exprContent = replacePower(_exprContent, _input.LT(-1).getText());
                     }
@@ -328,12 +347,20 @@ Id      :   ([a-z] | [A-Z]) ([a-z] | [A-Z] | [0-9])*
         ;
 
 
-tipo    :   'Num'     {   _variableType = Variable.NUMBER;    }
-        |   'Texto'   {   _variableType = Variable.TEXT;      }
+tipo    :   'Inteiro' {   _variableType = Variable.INT;     } 
+        |   'Decimal' {   _variableType = Variable.DOUBLE;  }
+        |   'Texto'   {   _variableType = Variable.TEXT;    }
         ;
 
 
-Num :   [0-9]+
+Num :   Decimal
+    |   Inteiro
+    ;
+
+Decimal : [0-9]+ ('.' [0-9]+)?
+        ;
+
+Inteiro : [0-9]+
         ;
 
 

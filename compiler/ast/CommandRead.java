@@ -14,8 +14,10 @@ public class CommandRead extends AbstractCommand {
     @Override
     public String generateJavaCode() {
         switch(variable.getType()){
-            case Variable.NUMBER:
+            case Variable.INT:
                 return String.format("%s = _key.nextInt();", id);
+            case Variable.DOUBLE:
+                return String.format("%s = _key.nextDouble();", id);
             case Variable.TEXT:
                 return String.format("%s = _key.nextLine();", id);
             default:
