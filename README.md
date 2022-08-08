@@ -50,7 +50,7 @@ Criar um editor com Highlights de palavras reservadas (editor Desktop)
 
 ✅ Possuir operações de Entrada e Saída	
 
-❌ Aceitar números decimais 	
+✅  Aceitar números decimais 	
 
 ✅ Verificar declaração de variávies (não usar variáveis que não foram declaradas)	
 
