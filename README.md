@@ -1,5 +1,13 @@
 # isilanguage-compiler
 
+## Integrantes
+
+- Antonio Lucas Barbosa Ferreira, 11201921416
+- Leonardo Ryo Nakagawa, 11201812233
+- Nathalia Favero Amorim, 11201922326
+- Pedro de Souza Tunin, 11201811959
+- Robert Chinem Fujii, 11201810569
+
 ## ANTLR Download
 curl -O https://www.antlr.org/download/antlr-4.7.1-complete.jar
 
@@ -10,6 +18,10 @@ java -cp .:antlr-4.7.1-complete.jar org.antlr.v4.Tool IsiLang.g4 -package compil
 javac -cp .:antlr-4.7.1-complete.jar compiler/**/*.java
 
 java -cp .:antlr-4.7.1-complete.jar compiler/main/MainClass
+
+## Links
+
+[Editor Web](https://isi-language.herokuapp.com)
 
 # Progresso
 
@@ -29,13 +41,13 @@ java -cp .:antlr-4.7.1-complete.jar compiler/main/MainClass
 
 ### Anexo 2 - Elementos Extraordinarios (pelo menos 2 itens abaixo) 
 
-Criar um interpretador a partir da AST
+❌ Criar um interpretador a partir da AST
 
-Criar um editor com Highlights de palavras reservadas (editor Desktop)
+❌ Criar um editor com Highlights de palavras reservadas (editor Desktop)
 
-👨‍💻 Criar um editor Web para o código
+✅ Criar um editor Web para o código
 
-👨‍💻 Tornar o compilador um Webservice para receber programas e enviar respostas de possíveis erros
+✅ Tornar o compilador um Webservice para receber programas e enviar respostas de possíveis erros
 
 
 ### Instruções para Entrega do Projeto
