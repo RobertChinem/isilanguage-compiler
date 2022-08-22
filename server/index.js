@@ -5,6 +5,7 @@ const { buildIsiLanguageTranspiler, generateJavaCode, saveCode, executeJava } = 
 const path = require("path");
 const app = express();
 const port = process.env.PORT || 3000;
+const fs = require("fs");
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -13,6 +14,14 @@ app.use(cors());
 
 app.get("/", (req, res) => {
     res.sendFile(path.join(__dirname, "html/index.html"));
+})
+
+app.get("/api/example", (req, res) => {
+    const file = fs.readFileSync(path.join(__dirname, "tmp/codes/example.isi"));
+    const codeExample = file.toString();
+    res.send({
+        codeExample
+    })
 })
 
 

@@ -49,6 +49,17 @@
             </div>
         </div>
     </div>
+    <div aria-live="polite" aria-atomic="true" class="position-relative">
+        <div class="toast-container bottom-0 end-0">
+            <div class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+                <div class="toast-header">
+                    <strong id="toast-title" class="me-auto"></strong>
+                    <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+                </div>
+                <div id="toast-body" class="toast-body"></div>
+            </div>
+        </div>
+    </div>
     <!-- CSS only -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
@@ -71,6 +82,21 @@
 
 
         const BASE_URL = "api";
+
+        async function getExample() {
+            const response = await fetch(`${BASE_URL}/example`);
+            const data = await response.json();
+            editor.value = data.codeExample;
+        }
+
+        function showToast({ title, body }) {
+            const toast = new bootstrap.Toast(document.querySelector(".toast"));
+            const toastTitle = document.getElementById("toast-title");
+            const toastBody = document.getElementById("toast-body");
+            toastTitle.innerHTML = title;
+            toastBody.innerHTML = body;
+            toast.show();
+        }
 
         function handleCompileSuccess(code, compilerOutput) {
             isiCompilerOutput.classList.remove("bg-danger");
@@ -113,6 +139,11 @@
         }
 
         async function compileCode() {
+            showToast({
+                title: "Isi language compiler",
+                body: "Transpilando código para java..."
+            })
+
             const rawData = await fetch(`${BASE_URL}/compileIsiLang`, {
                 method: "POST",
                 headers: {
@@ -123,17 +154,29 @@
                     code: editor.value
                 })
             });
+
             const data = await rawData.json();
-            console.log(data);
 
             if (data.success) {
                 handleCompileSuccess(data.code, data.output);
+                showToast({
+                    title: "Sucesso",
+                    body: "Programa compilado com sucesso!"
+                })
             } else {
                 handleCompileError(data.error);
+                showToast({
+                    title: "Erro",
+                    body: "Erro ao compilar o programa!"
+                })
             }
         }
 
         async function runCode() {
+            showToast({
+                title: "Java compiler",
+                body: "Executando código..."
+            })
             const rawData = await fetch(`${BASE_URL}/run/java`, {
                 method: "POST",
                 headers: {
@@ -146,13 +189,20 @@
                 })
             });
             const data = await rawData.json();
-            console.log(data);
 
             if (data.success) {
                 handleRunCodeSuccess(data.output, data.compilerOutput || "");
+                showToast({
+                    title: "Sucesso",
+                    body: "Programa executado com sucesso!"
+                })
             }
             else {
                 handleRunCodeError(data.error);
+                showToast({
+                    title: "Erro",
+                    body: "Erro ao executar o programa!"
+                })
             }
         }
 
@@ -174,6 +224,7 @@
 
         window.addEventListener("load", () => {
             addEvents(editor, buttonCompile, buttonRun);
+            getExample();
         })
 
     </script>
