@@ -1,9 +1,0 @@
-{
-    "cSpell.words": [
-        "datastructures"
-    ],
-    "java.project.referencedLibraries": [
-        "lib/**/*.jar",
-        "antlr-4.7.1-complete.jar"
-    ]
-}
