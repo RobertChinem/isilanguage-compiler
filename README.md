@@ -1,5 +1,3 @@
-# isilanguage-compiler
-
 ## Integrantes
 
 - Antonio Lucas Barbosa Ferreira, 11201921416
@@ -19,6 +17,8 @@ npm install
 npm start
 ```
 
+## Links
+[Editor Web](https://isi-language.herokuapp.com)
 
 ## ANTLR Download
 curl -O https://www.antlr.org/download/antlr-4.7.1-complete.jar
@@ -31,15 +31,12 @@ javac -cp .:antlr-4.7.1-complete.jar compiler/**/*.java
 
 java -cp .:antlr-4.7.1-complete.jar compiler/main/MainClass
 
-## Links
-
-[Editor Web](https://isi-language.herokuapp.com)
 
 # Progresso
 
 ## Critérios de Avaliação
 
-### Anexo 1 - Elementos adicionais (pelo menos 2 dos itens abaixo)✅
+### Anexo 1 - Elementos adicionais (pelo menos 2 dos itens abaixo) ✅
 
 ✅ Nova instrução para Switch/Case (escolha/caso)
 
@@ -51,7 +48,7 @@ java -cp .:antlr-4.7.1-complete.jar compiler/main/MainClass
 ❌ Geração de código para mais de uma linguagem diferente
 
 
-### Anexo 2 - Elementos Extraordinarios (pelo menos 2 itens abaixo) 
+### Anexo 2 - Elementos Extraordinarios (pelo menos 2 itens abaixo) ✅
 
 ❌ Criar um interpretador a partir da AST
 
@@ -62,7 +59,7 @@ java -cp .:antlr-4.7.1-complete.jar compiler/main/MainClass
 ✅ Tornar o compilador um Webservice para receber programas e enviar respostas de possíveis erros
 
 
-### Instruções para Entrega do Projeto
+### Instruções para Entrega do Projeto ✅
 
 ✅ Possuir 2 tipos de dados (pelo menos 1 String) 	
 
