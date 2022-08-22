@@ -8,6 +8,18 @@
 - Pedro de Souza Tunin, 11201811959
 - Robert Chinem Fujii, 11201810569
 
+## Instruções
+
+### Requisitos
+- Node JS v14 ou superior
+- Java 1.8 ou superior
+
+```bash
+npm install
+npm start
+```
+
+
 ## ANTLR Download
 curl -O https://www.antlr.org/download/antlr-4.7.1-complete.jar
 
