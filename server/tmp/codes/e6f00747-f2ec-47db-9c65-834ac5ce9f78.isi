@@ -1,0 +1,46 @@
+programa
+
+    declare Texto nomeImposto, Decimal valor, Inteiro quantidade, Decimal total, Inteiro i.
+
+    leia(nomeImposto).
+    leia(valor).
+    leia(quantidade).
+
+    se(valor > 25.5) entao {
+        escolha(nomeImposto){
+            caso("ICMS"){
+                total := 0
+                i := 0
+                enquanto(i < quantidade){
+                    total := total + valor * 1.25
+                    i := i + 1
+                }
+                escreva("Produto com imposto de 25 porcento").
+                escreva("Total a pagar ").
+                escreva(total).
+            }
+            caso("ISS"){
+                total := 0
+                i := 0
+                enquanto(i < quantidade){
+                    total := total + valor * 1.15
+                    i := i + 1
+                }
+                escreva("Produto com imposto de 15 porcento").
+                escreva("Total a pagar ").
+                escreva(total).
+            }
+        }
+    } senao {
+        total := 0
+        i := 0
+        enquanto(i < quantidade){
+            total := total + valor
+            i := i + 1
+        }
+        escreva("Produto livre de imposto").
+        escreva("Total a pagar ").
+        escreva(total).
+    }
+
+fimprog.

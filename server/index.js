@@ -6,6 +6,7 @@ const path = require("path");
 const app = express();
 const port = process.env.PORT || 3000;
 const fs = require("fs");
+const prettier = require("prettier");
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -46,6 +47,14 @@ app.post("/api/compileIsiLang", async (req, res) => {
     }
     const codeId = saveCode(code, "isi");
     const result = await generateJavaCode(codeId);
+
+    if(result.code){
+        result.code = prettier.format(result.code, {
+            parser: "java",
+            tabWidth: 4
+        })
+    }
+
     res.send(result);
 })
 
