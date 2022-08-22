@@ -9,11 +9,9 @@ Exibe o editor de código.
 Retorna um exemplo de código em isi-language.
 
 #### Retorno
-```json
-    {
-        "codeExample": ""
-    }
-```
+| Parâmetro | Tipo |
+| - | - |
+| codeExample | string |
 
 ### POST /api/compileIsiLang
 Retorna o código java equivalente do código (isi-language) enviado.
@@ -34,7 +32,7 @@ Retorna o código java equivalente do código (isi-language) enviado.
 ### POST api/run/java
 Retorna o resultado da execução do código (java) enviado.
 
-#### Body (exemplo)
+#### Body
 | Parâmetro | Tipo |
 | - | - |
 | code | string |
