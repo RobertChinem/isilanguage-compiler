@@ -2,9 +2,6 @@
 
 ## Endpoints
 
-### GET /
-Exibe o editor de código.
-
 ### GET /api/example
 Retorna um exemplo de código em isi-language.
 
