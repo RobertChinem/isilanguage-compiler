@@ -80,14 +80,12 @@ async function generateJavaCode(codeId) {
         const javaCode = fs.readFileSync(path.join(__dirname, `tmp/codes/${codeId}.java`), "utf8");
         return {
             success: true,
-            timestamp: new Date(),
             output,
             code: javaCode
         };
     } catch (error) {
         return {
             success: false,
-            timestamp: new Date(),
             error,
         };
     }
@@ -137,19 +135,13 @@ async function executeJava(codeId, input) {
 
         return {
             success: true,
-            timestamp: new Date(),
             output,
-            language: "java",
-            version: "11.0.15",
         };
     } catch (error) {
         console.log(error);
         return {
             success: false,
-            timestamp: new Date(),
             error,
-            language: "java",
-            version: "11.0.15",
         };
     }
 }
