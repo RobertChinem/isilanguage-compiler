@@ -1,0 +1,10 @@
+programa
+
+    declare Texto t.
+
+    leia(t).
+
+    escreva(t).
+    escreva(t).
+
+fimprog.

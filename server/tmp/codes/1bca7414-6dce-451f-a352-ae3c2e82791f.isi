@@ -1,0 +1,9 @@
+programa
+
+    declare Inteiro x.
+
+    x := 10
+
+    escreva(x).
+
+fimprog.
