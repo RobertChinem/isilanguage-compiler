@@ -31,6 +31,36 @@ javac -cp .:antlr-4.7.1-complete.jar compiler/**/*.java
 
 java -cp .:antlr-4.7.1-complete.jar compiler/main/MainClass
 
+## Sintaxe
+
+### Switch/Case (escolha/caso)
+
+A sintaxe para variáveis do tipo **X** é a seguinte:
+
+```
+escolha (X) {
+    caso (x1) {
+        ...
+    }
+    caso (x2) {
+        ...
+    }
+    .
+    .
+    .
+}
+```
+Onde **X** pode ser uma variável do tipo Inteiro ou Texto, e os valores **x1** e **x2** são valores literais (não podem ser variáveis).
+
+### Exponenciação
+
+Decidimos utilizar o operador ```**``` para a exponenciação. A sintaxe é a seguinte:
+
+```
+a ** b
+```
+
+Onde **a** e **b** são números (Inteiro/Decimal).
 
 # Progresso
 
